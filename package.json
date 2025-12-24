@@ -1,0 +1,16 @@
+{
+  "name": "codecachepro",
+  "version": "1.0.0",
+  "homepage": "https://Priyanshu-bisht-me2.github.io/codeCachePro",
+  "scripts": {
+    "build": "cd frontend && npm run build && cd .. && rmdir /s /q build 2>nul & xcopy /E /I frontend\\dist build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "devDependencies": {
+    "terser": "^5.44.0"
+  }
+}

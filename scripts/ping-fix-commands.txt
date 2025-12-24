@@ -1,0 +1,28 @@
+COMMANDS TO RUN AS ADMINISTRATOR TO ENABLE PING AND CONNECTIVITY
+================================================================
+
+1. Open PowerShell as Administrator
+
+2. Run these commands one by one:
+
+# Enable ICMP (Ping) through Windows Firewall
+New-NetFirewallRule -DisplayName "Allow ICMPv4 Ping" -Protocol ICMPv4 -IcmpType 8 -Enabled True -Direction Inbound -Action Allow
+
+# Enable HTTP traffic on port 5050
+New-NetFirewallRule -DisplayName "CodeCachePro Port 5050" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 5050
+
+3. Test from client device:
+
+# Test ping
+ping 192.168.137.47
+
+# Test HTTP
+curl http://192.168.137.47:5050/health
+
+# Configure npm
+npm config set registry http://192.168.137.47:5050/npm
+
+# Install packages
+npm install lodash
+
+THAT'S IT! After running these commands as Administrator, ping should work from client devices.
