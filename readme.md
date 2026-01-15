@@ -13,6 +13,28 @@
 
 ---
 
+## Manual Deployment Steps
+
+### 1. Prepare Repository
+```bash
+git clone https://github.com/tarunpathak001/CodeCache.git
+cd codecache-pro
+```
+
+### 2. Build Frontend
+```bash
+cd frontend
+npm install
+npm run build
+```
+
+### 3. Deploy Backend
+```bash
+cd ../backend
+npm install
+npm start
+```
+
 ## 🚀 Quick Setup (Windows)
 
 1. **Install Node.js** from [nodejs.org](https://nodejs.org/)
